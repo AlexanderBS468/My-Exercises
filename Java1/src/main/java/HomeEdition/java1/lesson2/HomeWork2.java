@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class HomeWork2 {
 
     public static void main (String[] args){
-        System.out.println("Java 1 Уровень 1 Урок 2 ДЗ№2 	БЕЗ ПРОВЕРОК на ввод ОШИБОК!!!! ver 2.3 RusEdition ");
+        System.out.println("Java 1 Уровень 1 Урок 2 ДЗ№2 	C ПРОВЕРКОй на ввод ОШИБОК!!!! ver 2.3 RusEdition ");
         System.out.println("Заданиe 1 : Поменять значение местами 0 и 1");
         System.out.println("Заданиe 2 : Массив заполняется значения на 3 больше предыдущего");
         System.out.println("Заданиe 3 : Если у заданного массива значение меньше 6, то значение умножается на 2");
@@ -114,13 +114,33 @@ public class HomeWork2 {
      *    или отрицательным), при этом метод должен сместить все элементы массива на n позиций.
      *    Для усложнения задачи нельзя пользоваться вспомогательными массивами
      */
+    static int[] shiftArray(int[] array, int shift) {
+        if (array == null || array.length < 2 || shift == 0 || shift % array.length == 0)
+            return array;
+        shift = shift % array.length; // optimization of the number of shifts
+        for (int cnt = 0; cnt < Math.abs(shift); cnt++) {
+            if (shift > 0) {
+                int tmp = array[array.length - 1];
+                for (int i = array.length - 1; i > 0; i--)
+                    array[i] = array[i - 1];
+                array[0] = tmp;
+            }
+            if (shift < 0) {
+                int tmp = array[0];
+                for (int i = 1; i < array.length; i++)
+                    array[i - 1] = array[i];
+                array[array.length - 1] = tmp;
+            }
+        }
+        return array;
+    }
     /**
     * -------------------------------ввод с клавиатуры---------------------------------------
     */
-    static int inputKYB() {
-        int a;
+    static String inputKYB() {
+        String a;
         Scanner sc = new Scanner(System.in);
-        return a = sc.nextInt();
+        return a = sc.next();
     }
     /**
      * ----------------------------------ввод массива------------------------------------------
@@ -129,7 +149,7 @@ public class HomeWork2 {
         int[] array = new int[len];
         for(int i = 0; i < len; i++) {
             System.out.print("Введите значение " + i + " элемента массива  = ");
-            array[i] = inputKYB();
+            array[i] = Integer.parseInt(inputKYB());
         }
         return array;
     }
@@ -137,48 +157,61 @@ public class HomeWork2 {
      *
      * выбор задания
      */
-    static void swichingTasks(int i) {
-        switch (i) {
-            case 1 : {
-                System.out.print("Для задания 1 введите размерность массива = ");
-                replaceBin(inputKYB());
-                System.out.println("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
-                swichingTasks(inputKYB());
-                break;			}
-            case 2 : {
-                fillArray(8);
-                System.out.println("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
-                swichingTasks(inputKYB());
-                break;			}
-            case 3 : {
-                findLessSix();
-                System.out.println("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
-                swichingTasks(inputKYB());
-                break;			}
-            case 4 : {
-                System.out.print("Для задания 4 введите размерность 2х-го квадратного массива = ");
-                fillingDiagonally(inputKYB());
-                System.out.println("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
-                swichingTasks(inputKYB());
-                break;			}
-            case 5 : {
-                System.out.print("Для задания 5 введите размерность массива = ");
-                findMinMax(inputKYB());
-                System.out.println("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
-                swichingTasks(inputKYB());
-                break;			}
-            case 6 : {
-                System.out.print("Для задания 6 введите размерность массива = ");
-                System.out.println("checkBalance(array[]) -> " + checkBalance(inputArray(inputKYB())));
-                System.out.println("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
-                swichingTasks(inputKYB());
-                break;			}
-            case 7 : {
-                System.out.print("Для задания 7 введите размерность массива = ");
-                
-                System.out.println("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
-                swichingTasks(inputKYB());
-                break;			}
-        }
+    static void swichingTasks(String i) {
+            try {
+                int j = Integer.parseInt(i);
+                switch (j) {
+                    case 1: {
+                        System.out.print("Для задания 1 введите размерность массива = ");
+                        replaceBin(Integer.parseInt(inputKYB()));
+                        System.out.print("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
+                        swichingTasks(inputKYB());
+                        break;
+                    }
+                    case 2: {
+                        fillArray(8);
+                        System.out.print("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
+                        swichingTasks(inputKYB());
+                        break;
+                    }
+                    case 3: {
+                        findLessSix();
+                        System.out.print("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
+                        swichingTasks(inputKYB());
+                        break;
+                    }
+                    case 4: {
+                        System.out.print("Для задания 4 введите размерность 2х-го квадратного массива = ");
+                        fillingDiagonally(Integer.parseInt(inputKYB()));
+                        System.out.print("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
+                        swichingTasks(inputKYB());
+                        break;
+                    }
+                    case 5: {
+                        System.out.print("Для задания 5 введите размерность массива = ");
+                        findMinMax(Integer.parseInt(inputKYB()));
+                        System.out.print("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
+                        swichingTasks(inputKYB());
+                        break;
+                    }
+                    case 6: {
+                        System.out.print("Для задания 6 введите размерность массива = ");
+                        System.out.println("checkBalance(array[]) -> " + checkBalance(inputArray(Integer.parseInt(inputKYB()))));
+                        System.out.print("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
+                        swichingTasks(inputKYB());
+                        break;
+                    }
+                    case 7: {
+                        System.out.print("Для задания 7 введите размерность массива и значение сдвига = ");
+                        System.out.println(Arrays.toString(shiftArray(inputArray(Integer.parseInt(inputKYB())), Integer.parseInt(inputKYB()))));
+                        System.out.print("Хотите другое задание?  Введите номер 1-6, другое число - выход : ");
+                        swichingTasks(inputKYB());
+                        break;
+                    }
+                }
+            }
+            catch ( NumberFormatException e ) {
+                System.out.println("Требуется целочисленный аргумент");
+            }
     }
 }
