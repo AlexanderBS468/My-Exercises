@@ -20,7 +20,6 @@ public class HomeWork2 {
         System.out.println("Заданиe 7 : В заданном массиве смещает массив на заданное число");
         System.out.print("выберите задание 1-7, любое другое число - выход : ");
         swichingTasks(inputKYB());
-        System.out.println( "Программа завершила работу.");
     }
     /**
      * 1. Задать целочисленный массив, состоящий из 0 и 1.
@@ -213,6 +212,9 @@ public class HomeWork2 {
             }
             catch ( NumberFormatException e ) {
                 System.out.println("Требуется целочисленный аргумент");
+            }
+            finally {
+                System.out.println( "Программа завершила работу.");
             }
     }
 }
