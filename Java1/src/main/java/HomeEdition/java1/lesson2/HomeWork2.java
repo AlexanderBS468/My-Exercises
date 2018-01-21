@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Created by AlexBS on 07.01.2018.
+ * Created by AlexBS on 21.01.2018.
  * version  2.3
  */
 public class HomeWork2 {
@@ -16,7 +16,7 @@ public class HomeWork2 {
         System.out.println("Заданиe 3 : Если у заданного массива значение меньше 6, то значение умножается на 2");
         System.out.println("Заданиe 4 : Заданный массив заполняется рандомными значениями и находится Min и Max");
         System.out.println("Заданиe 5 : У массива диагональные значения заменяются 1");
-        System.out.println("Заданиe 6 : Заданный массив заполняется значениями и затем сравнивает левые и правые част");
+        System.out.println("Заданиe 6 : Заданный массив заполняется значениями и затем сравнивает левые и правые части");
         System.out.println("Заданиe 7 : В заданном массиве смещает массив на заданное число");
         System.out.print("выберите задание 1-7, любое другое число - выход : ");
         swichingTasks(inputKYB());
