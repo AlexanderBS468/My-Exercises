@@ -1,7 +1,7 @@
 package HomeEdition.java1.lesson4;
 
 /**
- * Created by AlexBS on 31.01.2018. ver 2
+ * Created by AlexBS on 31.01.2018. ver 2.1
  */
 public class Homework4 {
     private final static byte k = 5;
