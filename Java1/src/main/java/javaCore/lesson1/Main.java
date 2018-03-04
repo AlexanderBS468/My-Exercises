@@ -1,10 +1,10 @@
-package javaCore;
+package javaCore.lesson1;
 
-import javaCore.obstacles.Cross;
-import javaCore.obstacles.Obstacle;
-import javaCore.obstacles.Wall;
-import javaCore.obstacles.Water;
-import javaCore.participants.*;
+import javaCore.lesson1.obstacles.Cross;
+import javaCore.lesson1.obstacles.Obstacle;
+import javaCore.lesson1.obstacles.Wall;
+import javaCore.lesson1.obstacles.Water;
+import javaCore.lesson1.participants.*;
 
 /**
  * Created by AlexBS on 26.02.2018.

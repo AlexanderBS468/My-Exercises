@@ -1,7 +1,6 @@
-package javaCore.obstacles;
+package javaCore.lesson1.obstacles;
 
-import javaCore.participants.Animal;
-import javaCore.participants.Participant;
+import javaCore.lesson1.participants.Participant;
 
 /**
  * Created by AlexBS on 26.02.2018.

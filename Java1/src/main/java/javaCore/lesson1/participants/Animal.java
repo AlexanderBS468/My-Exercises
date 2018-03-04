@@ -1,4 +1,4 @@
-package javaCore.participants;
+package javaCore.lesson1.participants;
 /**
  * Created by AlexBS on 26.02.2018.
  */

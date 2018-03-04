@@ -1,6 +1,6 @@
-package javaCore;
+package javaCore.lesson1;
 
-import javaCore.obstacles.Obstacle;
+import javaCore.lesson1.obstacles.Obstacle;
 
 
 /**

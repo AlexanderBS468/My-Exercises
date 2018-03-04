@@ -1,7 +1,7 @@
-package javaCore;
+package javaCore.lesson1;
 
-import javaCore.obstacles.Obstacle;
-import javaCore.participants.Participant;
+import javaCore.lesson1.obstacles.Obstacle;
+import javaCore.lesson1.participants.Participant;
 
 import java.util.Arrays;
 
